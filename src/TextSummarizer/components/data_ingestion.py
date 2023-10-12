@@ -11,6 +11,10 @@ class DataIngestion:
         self.config = config
 
     def download_file(self):
+        """ 
+        Downloads the data from the source URL
+        """
+        logger.info("<<<<File Download Started>>>>")
         if not os.path.exists(self.config.local_data_file):
             filename, headers = request.urlretrieve(
                 url= self.config.source_URL,
